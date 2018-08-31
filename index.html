@@ -13,11 +13,34 @@
     </head>
     <body>
 
-      <!-- login buttons -->
+      <!--sign in button -->
       <div class="login_buttons">
       <button type="button" class="btn signin-signup" data-toggle="modal" data-target="#sign-in-modal">
         Log In
       </button>
+
+      <!-- Sign in modal -->
+      <div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Sign into your account to start studying!</h5>
+            </div>
+            <div class="modal-body">
+              <p class="message"></p>
+              <form class="border" id="sign-in">
+              <fieldset>
+                <input type="email" name="credentials[email]" placeholder="Email">
+                <input type="password" name="credentials[password]" placeholder="Password">
+                  <button type="submit" class="btn">sign in</button>
+              </fieldset>
+            </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        <!--sign up button -->
       <button type="button" class="btn signin-signup" data-toggle="modal" data-target="#sign-up-modal">
         Create an account
       </button>
@@ -28,7 +51,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 id="sign-up-title" class="modal-title">Sign up to play!</h5>
+              <h5 id="sign-up-title" class="modal-title">Sign up to start studying!</h5>
             </div>
             <div class="modal-body">
               <p class="message"></p>
@@ -45,26 +68,6 @@
         </div>
       </div>
 
-      <!-- Sign in modal -->
-      <div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Sign into your account to play!</h5>
-            </div>
-            <div class="modal-body">
-              <p class="message"></p>
-              <form class="border" id="sign-in">
-              <fieldset>
-                <input type="email" name="credentials[email]" placeholder="Email">
-                <input type="password" name="credentials[password]" placeholder="Password">
-                  <button type="submit" class="btn">sign in</button>
-              </fieldset>
-            </form>
-            </div>
-          </div>
-        </div>
-      </div>
 
     </body>
 </html>
