@@ -1,6 +1,6 @@
 #!/bin/bash
 
-curl "http://localhost:4741/sign-up" \
+curl "https://flashvocab.herokuapp.com/sign-up" \
   --include \
   --request POST \
   --header "Content-Type: application/json" \

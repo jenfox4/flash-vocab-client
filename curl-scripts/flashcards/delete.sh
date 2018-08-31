@@ -1,6 +1,6 @@
 #!/bin/bash
 
-curl "http://localhost:4741/flashcards/${ID}" \
+curl "https://flashvocab.herokuapp.com/lashcards/${ID}" \
   --include \
   --request DELETE \
   --header "Content-Type: application/json" \

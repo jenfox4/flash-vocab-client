@@ -1,6 +1,6 @@
 #!/bin/bash
 
-curl "http://localhost:4741/flashcards/${ID}" \
+curl "https://flashvocab.herokuapp.com/flashcards/${ID}" \
   --include \
   --request PATCH \
   --header "Authorization: Token token=${TOKEN}" \
