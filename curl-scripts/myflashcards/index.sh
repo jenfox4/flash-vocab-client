@@ -1,7 +1,7 @@
 #!/bin/bash
 
-curl "https://flashvocab.herokuapp.com/flashcards/${ID}" \
+curl "http://flashvocab.herokuapp.com/myflashcards/" \
   --include \
-  --request DELETE \
+  --request GET \
   --header "Content-Type: application/json" \
   --header "Authorization: Token token=${TOKEN}" \
