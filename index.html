@@ -11,13 +11,89 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
-    <body>
+<body>
 
-      <!--sign in button -->
-      <div class="login_buttons">
-      <button type="button" class="btn signin-signup" data-toggle="modal" data-target="#sign-in-modal">
-        Log In
-      </button>
+<!--Nav bar  -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand">Flash Vocab</a>
+  <!-- mobily responsive menu -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Register/ Sign in
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" data-toggle="modal" data-target="#sign-up-modal">Register</a>
+        <a class="dropdown-item" data-toggle="modal" data-target="#sign-in-modal">Sign in</a>
+      </div>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Menu
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="#">All GRE flashcards</a>
+        <a class="dropdown-item" href="#">My flashcards</a>
+        <a class="dropdown-item" data-toggle="modal" data-target="#change-password-modal">Change Password</a>
+        <a class="dropdown-item" id="log-out">Log out</a>
+      </div>
+    </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="content">
+  <div class="flashcard">
+    <div class="front">
+      <h3 class="word">Word</h3>
+    </div>
+
+    <div class="back">
+      <h4 class="definition">definition</h4>
+      <h5 class="sentence">sentence</h5>
+    </div>
+
+    <button type="button" class="btn to-stack">add to my stack</button>
+  </div>
+
+  <div class="login-buttons">
+      <!--sign up button -->
+    <button type="button" class="btn signin-signup" data-toggle="modal" data-target="#sign-up-modal">
+      Create an account
+    </button>
+    <!--sign in button -->
+    <button type="button" class="btn signin-signup" data-toggle="modal" data-target="#sign-in-modal">
+      Log In
+    </button>
+  </div>
+
+    <!-- Sign up modal -->
+    <div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 id="sign-up-title" class="modal-title">Sign up to start studying!</h5>
+          </div>
+          <div class="modal-body">
+            <p class="message"></p>
+            <form id="sign-up">
+            <fieldset>
+              <input type="email" name="credentials[email]" placeholder="Email">
+              <input type="password" name="credentials[password]" placeholder="Password">
+              <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+                <button type="submit" class="btn">sign up</button>
+            </fieldset>
+          </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
       <!-- Sign in modal -->
       <div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-hidden="true">
@@ -28,7 +104,7 @@
             </div>
             <div class="modal-body">
               <p class="message"></p>
-              <form class="border" id="sign-in">
+              <form id="sign-in">
               <fieldset>
                 <input type="email" name="credentials[email]" placeholder="Email">
                 <input type="password" name="credentials[password]" placeholder="Password">
@@ -40,27 +116,20 @@
         </div>
       </div>
 
-        <!--sign up button -->
-      <button type="button" class="btn signin-signup" data-toggle="modal" data-target="#sign-up-modal">
-        Create an account
-      </button>
-      </div>
-
-      <!-- Sign up modal -->
-      <div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog" aria-hidden="true">
+      <!-- Change password modal -->
+      <div class="modal fade" id="change-password-modal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 id="sign-up-title" class="modal-title">Sign up to start studying!</h5>
+              <h5 id="change-password-title" class="modal-title">Change password</h5>
             </div>
             <div class="modal-body">
               <p class="message"></p>
-              <form class="border" id="sign-up">
+              <form id="change-password">
               <fieldset>
-                <input type="email" name="credentials[email]" placeholder="Email">
-                <input type="password" name="credentials[password]" placeholder="Password">
-                <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
-                  <button type="submit" class="btn">sign up</button>
+                <input type="password" name="passwords[old]" placeholder="Old Password">
+                <input type="password" name="passwords[new]" placeholder="New Password">
+                  <button type="submit" class="btn">change password</button>
               </fieldset>
             </form>
             </div>
@@ -69,5 +138,6 @@
       </div>
 
 
+</div>
     </body>
 </html>

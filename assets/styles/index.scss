@@ -1,1 +1,62 @@
 @import '~bootstrap/scss/bootstrap';
+
+//body style
+.content {
+  text-align: center;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+// Modal style
+.modal-content {
+  width: auto;
+}
+.modal-header {
+  display: block;
+  text-align: center;
+}
+.modal-body {
+  align-self: center;
+}
+
+fieldset {
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  input {
+    margin: 5px;
+  }
+  button {
+    display: flex;
+    align-self: center;
+    margin: 5px;
+  }
+}
+
+
+//Flashcard style
+
+.flashcard {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid $border-color;
+  border-radius: 20px;
+  width: 70%;
+  margin: 10px auto;
+  box-shadow: 0px 0px 15px $black;
+
+  .front {
+    margin-top: 70px;
+  }
+  .to-stack {
+    margin-top: 30px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    align-self: flex-end;
+    justify-content: flex-end;
+    text-align: center;
+  }
+
+}
