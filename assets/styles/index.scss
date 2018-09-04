@@ -1,36 +1,73 @@
 @import '~bootstrap/scss/bootstrap';
+@import './theme.scss';
 
 //body style
 .content {
-  text-align: center;
-  margin: 20px;
   display: flex;
   flex-direction: column;
+  margin: 20px;
+  text-align: center;
 }
+
+.btn {
+  font-size: 1em;
+}
+
+//Nav bar style
+.navbar {
+  background-color: $orange;
+  color: $white;
+  font-size: 1em;
+
+
+  .navbar-brand {
+    font-size: 1.5em;
+  }
+}
+
+.dropdown-menu {
+  background-color: $orange;
+  color: $white;
+}
+
+.dropdown-item {
+  background-color: $orange;
+  color: $white;
+}
+
 
 // Modal style
 .modal-content {
-  width: auto;
+  width: 400px;
 }
+
 .modal-header {
   display: block;
   text-align: center;
 }
+
 .modal-body {
   align-self: center;
 }
 
-fieldset {
-  border: none;
+.modal-dialog {
   display: flex;
+  margin: auto;
+  width: auto;
+}
+
+fieldset {
   align-items: center;
+  border: 0;
+  display: flex;
   justify-content: center;
+  padding-bottom: 20px;
   input {
     margin: 5px;
   }
   button {
-    display: flex;
     align-self: center;
+    display: flex;
     margin: 5px;
   }
 }
@@ -39,24 +76,49 @@ fieldset {
 //Flashcard style
 
 .flashcard {
+  border: 3px solid $grey;
+  border-radius: 20px;
+  box-shadow: 0 0 15px $black;
   display: flex;
   flex-direction: column;
-  border: 3px solid $border-color;
-  border-radius: 20px;
-  width: 70%;
   margin: 10px auto;
-  box-shadow: 0px 0px 15px $black;
+  width: 70%;
+
+  h3 {
+    font-size: 2em;
+    padding: 20px;
+  }
+
+  h4 {
+    font-size: 1.5em;
+    padding: 20px;
+  }
 
   .front {
     margin-top: 70px;
   }
+
   .to-stack {
-    margin-top: 30px;
-    margin-right: 10px;
-    margin-bottom: 5px;
     align-self: flex-end;
     justify-content: flex-end;
+    margin: 30px 10px 10px 0;
     text-align: center;
   }
 
+  .glyphicon-pencil {
+    font-size: 1em;
+  }
+}
+
+
+.login-buttons {
+  padding: 20px;
+}
+
+.back {
+  input {
+    font-style: italic;
+    text-align: center;
+    width: 75%;
+}
 }

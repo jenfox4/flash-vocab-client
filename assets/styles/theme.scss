@@ -1,9 +1,18 @@
 @import '~bootstrap/scss/bootstrap';
+/* style.css */
+* {
+   font-size: 16px;
+   line-height: 2;
+}
 
-
-$background-color: #fff;
-$navbar: #444;
+$blue: #748386;
+$black: #444;
+$grey: #aaa;
+$white: #fff;
+$red: #6a3937;
 $border-color: #aaa;
+$orange: #dd9000;
+
+
 $fontsize: 2em;
 $btnfontsize: 18px;
-$black: #444;

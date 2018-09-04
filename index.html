@@ -6,6 +6,7 @@
 
       <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
 
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
@@ -14,8 +15,8 @@
 <body>
 
 <!--Nav bar  -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand">Flash Vocab</a>
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <li class="navbar-brand">Flash Vocab</li>
   <!-- mobily responsive menu -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -50,15 +51,20 @@
 <div class="content">
   <div class="flashcard">
     <div class="front">
-      <h3 class="word">Word</h3>
+      <h3 class="word">Ambiguous</h3>
     </div>
 
     <div class="back">
-      <h4 class="definition">definition</h4>
-      <h5 class="sentence">sentence</h5>
+      <h4 class="definition">doubtful; uncertain</h4>
+
+      <form>
+        <input type="text" placeholder="write a sentence to make the definition more meaningful">
+        <span class="glyphicon glyphicon-pencil"></span>
+      </form>
     </div>
 
-    <button type="button" class="btn to-stack">add to my stack</button>
+
+    <button type="button" class="btn to-stack">add/remove my stack</button>
   </div>
 
   <div class="login-buttons">
