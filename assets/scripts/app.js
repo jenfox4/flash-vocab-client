@@ -1,6 +1,7 @@
 'use strict'
 
 const authEvents = require('./auth/events.js')
+const userEvents = require('./user/events.js')
 
 $(() => {
   // AUTHENTICATION HANDLERS
@@ -11,4 +12,5 @@ $(() => {
   $('.modal').on('blur', function () {
     $('.message').empty()
 })
+$('.glyphicon-repeat').on('click', userEvents.flipCard)
 })

@@ -92,8 +92,10 @@ fieldset {
   flex-direction: column;
   margin: 30px auto;
   width: 60%;
+  height: 300px;
 
   .glyphicon-repeat {
+    margin-top: 50px;
     padding: 20px;
 }
 
@@ -111,19 +113,13 @@ fieldset {
     margin-top: 70px;
   }
 
-  .to-stack {
-    align-self: flex-end;
-    justify-content: flex-end;
-    margin: 30px 10px 10px 0;
-    text-align: center;
-  }
-
   .glyphicon-pencil {
     font-size: 1em;
   }
 }
 
 .back {
+  display: none;
   textarea {
     font-size: 1em;
     font-style: italic;
@@ -131,12 +127,23 @@ fieldset {
     width: 60%;
     height: 40px;
   }
+  h4 {
+    margin-top: 50px;
+  }
 }
 
 .login-buttons {
   padding: 20px;
 }
 
+.to-stack {
+  display: none;
+  justify-content: center;
+  margin: 30px;
+  text-align: center;
+  align-self: center;
+  width: 20%;
+}
 
 @media screen and (max-width: 950px) {
   .flashcard {
@@ -155,11 +162,12 @@ fieldset {
     height: 500px;
     width: 90%;
 
-    .to-stack {
-      align-self: center;
-      margin-top: 150px;
-    }
   }
+
+  .to-stack {
+    margin-top: 150px;
+  }
+
   .btn {
     font-size: 75%;
   }

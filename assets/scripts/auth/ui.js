@@ -13,6 +13,7 @@ const signInSuccess = function (response) {
   $('#sign-in-modal').modal('hide')
   $('input').val('')
   $('.flashcard').show()
+  $('.to-stack').show()
   $('#menu').show()
   $('#register').hide()
   $('.login-buttons').hide()
@@ -28,6 +29,7 @@ const changePasswordSuccess = function () {
 
 const logOutSuccess = function () {
   $('.flashcard').hide()
+  $('.to-stack').hide()
   $('#menu').hide()
   $('#register').show()
   $('.login-buttons').show()
