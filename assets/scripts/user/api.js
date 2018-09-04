@@ -2,11 +2,20 @@
 const config = require('../config.js')
 const store = require('../store.js')
 
-const nextFlashcard = function (data, flashcardId) {
+// next flashcard in whole GRE deck
+const nextFlashcard = function (flashcardId) {
+  let url = null
+  if (store.stackMode === 'gre') {
+    url = '/flashcards/'
+  } else {
+    url = '/myflashcards/'
+  }
   return $.ajax({
-    url: config.apiUrl + '/flashcards/' + flashcardId,
+    url: config.apiUrl + url + flashcardId,
     method: 'GET',
-    data
+    headers: {
+      'Authorization': 'Token token=' + store.user.token
+    }
   })
 }
 
@@ -19,17 +28,6 @@ const allMyCards = function () {
     }
   })
 }
-
-const nextMyFlashcard = function (myFlashcardId) {
-  return $.ajax({
-    url: config.apiUrl + '/myflashcards/' + myFlashcardId,
-    method: 'GET',
-    headers: {
-      'Authorization': 'Token token=' + store.user.token
-    }
-  })
-}
-
 
 const saveToMyflashcards = function (flashcardId) {
   return $.ajax({
@@ -48,9 +46,30 @@ const saveToMyflashcards = function (flashcardId) {
   })
 }
 
+const deleteMyFlashcard = function (myFlashcardId) {
+  return $.ajax({
+    url: config.apiUrl + '/myflashcards/' + myFlashcardId,
+    method: 'DELETE',
+    headers: {
+      'Authorization': 'Token token=' + store.user.token
+    }
+  })
+}
+
+const addSentence = function (myFlashcardId) {
+  return $.ajax({
+    url: config.apiUrl + '/myflashcards/' + myFlashcardId,
+    method: 'DELETE',
+    headers: {
+      'Authorization': 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   nextFlashcard,
   saveToMyflashcards,
   allMyCards,
-  nextMyFlashcard
+  deleteMyFlashcard,
+  addSentence
 }

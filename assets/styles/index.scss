@@ -132,7 +132,7 @@ fieldset {
   }
 }
 
-.to-stack {
+.to-stack, .remove-stack {
   display: none;
   justify-content: center;
   margin: 30px;
@@ -190,7 +190,7 @@ fieldset {
     }
   }
 
-  .to-stack {
+  .to-stack, .remove-stack {
     margin-top: 50px;
   }
 

@@ -38,7 +38,7 @@
         Menu
       </a>
       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <a class="dropdown-item">All GRE flashcards</a>
+        <a class="dropdown-item all-cards">All GRE flashcards</a>
         <a class="dropdown-item my-cards">My flashcards</a>
         <a class="dropdown-item" data-toggle="modal" data-target="#change-password-modal">Change Password</a>
         <a class="dropdown-item" id="log-out">Log out</a>
@@ -52,15 +52,15 @@
   <h2 class="card-stack">GRE Flashcard Stack</h2>
   <div class="flashcard">
     <div class="front">
-      <h3 class="word">Ambiguous</h3>
+      <h3 class="word">let the learning begin!</h3>
     </div>
 
     <div class="back">
-      <h4 class="definition">doubtful; uncertain</h4>
-
+      <h4 class="definition">You'll see the definition of your word here!</h4>
       <form class="sentence">
-        <textarea placeholder="write a sentence to make the definition more meaningful"></textarea>
+        <textarea class="no-sentence" placeholder="write a sentence to make the definition more meaningful"></textarea>
         <span class="glyphicon glyphicon-pencil"></span>
+        <p class="my-sentence"></p>
       </form>
     </div>
 
@@ -68,6 +68,7 @@
   </div>
 
   <button type="button" class="btn to-stack">add to my stack</button>
+  <button type="button" class="btn remove-stack">remove my stack</button>
   <span class="glyphicon glyphicon-arrow-right"></span>
 
   <div class="login-buttons">
@@ -147,6 +148,28 @@
         </div>
       </div>
 
+      <!--delete modal -->
+        <div class="modal fade" id="delete" role="dialog">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+              <div class="modal-body">
+                <p>That vocab word has been removed from your study list. Awesome job learning some new vocab! Keep it up!</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
 
 </div>
     </body>

@@ -5,13 +5,19 @@ const store = {
 
 const stackMode = 'gre'
 
-const currentFlashcardId = null
+const greFlashcardId = null
 
 const arrayOfMyFlashcards = []
 
+const currentFlashcardId = null
+
+const flashcard = {}
+
 module.exports = {
   store,
-  currentFlashcardId,
+  greFlashcardId,
   arrayOfMyFlashcards,
-  stackMode
+  stackMode,
+  currentFlashcardId,
+  flashcard
 }

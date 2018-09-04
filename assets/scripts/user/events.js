@@ -9,22 +9,9 @@ const flipFlashcard = function (event) {
   ui.flipFlashcard()
 }
 
-
-const nextGREFlashcard = function (event) {
-  event.preventDefault()
-  const data = getFormFields(event.target)
-  const flashcardId = (Math.floor((Math.random() * 2326) + 1))
-  store.currentFlashcardId = flashcardId
-  console.log(store.currentFlashcard)
-  api.nextFlashcard(data, flashcardId)
-    .then(ui.nextFlashcard)
-    .catch(ui.fail)
-}
-
 const saveToMyflashcards = function (event) {
   event.preventDefault()
   const flashcardId = store.currentFlashcardId
-  console.log(flashcardId)
   api.saveToMyflashcards(flashcardId)
     .then(ui.saveToMyflashcards)
     .catch(ui.fail)
@@ -37,32 +24,41 @@ const allMyCards = function (event) {
     .catch(ui.fail)
 }
 
-const nextMyFlashcard = function (event) {
+const allGreCards = function (event) {
   event.preventDefault()
-  console.log(store.arrayOfMyFlashcards)
-  const length = store.arrayOfMyFlashcards.length
-  console.log(length)
-  const index = (Math.floor((Math.random() * (4) + 1)))
-  console.log(index)
-  const myFlashcardId = store.arrayOfMyFlashcards[index]
-  api.nextMyFlashcard(myFlashcardId)
-    .then(ui.nextMyFlashcard)
-    .catch(ui.fail)
+  store.stackMode = 'gre'
+  ui.allGreCards()
+  nextFlashcard()
 }
 
 const nextFlashcard = function (event) {
+  let flashcardId = null
+  console.log('stack mode', store.stackMode)
   if (store.stackMode === 'gre') {
-    nextGREFlashcard(event)
+    flashcardId = (Math.floor((Math.random() * 2326) + 1))
   } else if (store.stackMode === 'mycards') {
-    nextMyFlashcard(event)
+    const length = store.arrayOfMyFlashcards.length - 1
+    const index = (Math.floor((Math.random() * (length) + 1)))
+    flashcardId = store.arrayOfMyFlashcards[index]
   }
+  store.currentFlashcardId = flashcardId
+  console.log(flashcardId)
+  api.nextFlashcard(flashcardId)
+    .then(ui.nextFlashcard)
+    .catch(ui.fail)
+}
+
+const deleteMyFlashcard = function (event) {
+  api.deleteMyFlashcard(store.flashcard.myflashcard.id)
+    .then(ui.deleteSuccess)
+    .catch(ui.fail)
 }
 
 module.exports = {
   flipFlashcard,
-  nextGREFlashcard,
   saveToMyflashcards,
   allMyCards,
-  nextMyFlashcard,
-  nextFlashcard
+  nextFlashcard,
+  deleteMyFlashcard,
+  allGreCards
 }

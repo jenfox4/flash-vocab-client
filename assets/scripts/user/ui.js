@@ -1,23 +1,49 @@
 const store = require('./../store.js')
 const config = require('./../config.js')
 
+// crud actions for all flashcards
+
 const flipFlashcard = function () {
   $('.front').toggle()
   $('.back').toggle()
 }
 
 const nextFlashcard = function (response) {
+  console.log(response)
+  store.flashcard = response
   $('.front').show()
   $('.back').hide()
-  const word = response.flashcard.word
-  const definition = response.flashcard.definition
+  let word = null
+  let definition = null
+  let sentence = null
+  if (store.stackMode === 'gre') {
+    word = response.flashcard.word
+    definition = response.flashcard.definition
+  } else {
+    word = response.myflashcard.flashcard.word
+    definition = response.myflashcard.flashcard.definition
+    sentence = response.myflashcard.sentence
+    console.log(sentence)
+    if (sentence === '') {
+      console.log('no sentence')
+      $('.no-sentence').show()
+      $('.my-sentence').hide()
+    } else {
+      console.log('sentence')
+      $('.my-sentence').text(response.myflashcard.flashcard.sentence)
+      $('.my-sentence').show()
+      $('.no-sentence').hide()
+    }
+  }
   $('.word').text(word)
   $('.definition').text(definition)
-  console.log(response)
 }
 
+// crud actions for my flashcards
+
 const saveToMyflashcards = function () {
-  $('.to-stack').text('remove from my stack')
+  $('.to-stack').hide()
+  $('.remove-stack').show()
   $('.sentence').toggle()
 }
 
@@ -28,16 +54,19 @@ const allMyCards = function (response) {
     store.arrayOfMyFlashcards.push(response.myflashcards[i].id)
   }
   store.stackMode = 'mycards'
-  $('.to-stack').text('remove from my stack')
+  $('.to-stack').hide()
+  $('.remove-stack').show()
 }
 
-const nextMyFlashcard = function (response) {
-  $('.front').show()
-  $('.back').hide()
-  const word = response.myflashcard.flashcard.word
-  const definition = response.myflashcard.flashcard.definition
-  $('.word').text(word)
-  $('.definition').text(definition)
+const allGreCards = function () {
+  $('.card-stack').text('GRE Flashcard Stack')
+  $('.sentence').toggle()
+  $('.to-stack').show()
+  $('.remove-stack').hide()
+}
+
+const deleteSuccess = function (response) {
+  $('#delete').modal('toggle')
 }
 
 module.exports = {
@@ -45,6 +74,6 @@ module.exports = {
   nextFlashcard,
   saveToMyflashcards,
   allMyCards,
-  nextMyFlashcard
-
+  allGreCards,
+  deleteSuccess
 }
