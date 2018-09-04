@@ -19,9 +19,11 @@
   color: $white;
   font-size: 1em;
 
-
   .navbar-brand {
     font-size: 1.5em;
+  }
+  #menu {
+    display: none;
   }
 }
 
@@ -74,15 +76,14 @@ fieldset {
 
 
 //Flashcard style
-
 .flashcard {
+  display: none;
   border: 3px solid $grey;
   border-radius: 20px;
   box-shadow: 0 0 15px $black;
-  display: flex;
   flex-direction: column;
-  margin: 10px auto;
-  width: 70%;
+  margin: 30px auto;
+  width: 60%;
 
   h3 {
     font-size: 2em;
@@ -116,9 +117,44 @@ fieldset {
 }
 
 .back {
-  input {
+  textarea {
+    font-size: 1em;
     font-style: italic;
     text-align: center;
-    width: 75%;
+    width: 60%;
+    height: 40px;
 }
+}
+
+@media screen and (max-width: 950px) {
+  .flashcard {
+    width: 80%;
+  }
+  .back {
+    textarea {
+      font-size: 0.8em;
+      height: 35px;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .flashcard {
+    height: 500px;
+    width: 90%;
+
+    .to-stack {
+      align-self: center;
+      margin-top: 150px;
+    }
+  }
+  .btn {
+    font-size: 75%;
+  }
+  .back {
+    textarea {
+      font-size: 0.8em;
+      height: 80px;
+    }
+  }
 }

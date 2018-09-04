@@ -7,7 +7,12 @@ const signUpSuccess = function () {
 }
 
 const signInSuccess = function (response) {
-  console.log('signed in')
+  $('#sign-in-modal').modal('hide')
+  $('input').val('')
+  $('.flashcard').show()
+  $('#menu').show()
+  $('#register').hide()
+  $('.login-buttons').hide()
   store.user = response.user
 }
 
@@ -16,7 +21,10 @@ const changePasswordSuccess = function () {
 }
 
 const logOutSuccess = function () {
-  console.log('log out success')
+  $('.flashcard').hide()
+  $('#menu').hide()
+  $('#register').show()
+  $('.login-buttons').show()
 }
 
 module.exports = {
