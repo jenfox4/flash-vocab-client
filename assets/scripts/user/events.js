@@ -5,11 +5,20 @@ const store = require('./../store.js')
 const config = require('./../config.js')
 
 
-const flipCard = function (event) {
+const flipFlashcard = function (event) {
   event.preventDefault()
   ui.flipFlashcard()
 }
 
+const nextFlashcard = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.nextFlashcard(data)
+    .then(ui.nextFlashcard)
+    .catch(ui.fail)
+}
+
 module.exports = {
-  flipCard
+  flipFlashcard,
+  nextFlashcard
 }

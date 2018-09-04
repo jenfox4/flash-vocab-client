@@ -12,5 +12,6 @@ $(() => {
   $('.modal').on('blur', function () {
     $('.message').empty()
 })
-$('.glyphicon-repeat').on('click', userEvents.flipCard)
+  $('.glyphicon-repeat').on('click', userEvents.flipFlashcard)
+  $('.glyphicon-arrow-right').on('click', userEvents.nextFlashcard)
 })

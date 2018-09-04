@@ -2,15 +2,14 @@
 const config = require('../config.js')
 const store = require('../store.js')
 
-// creates new user in api
-const flipFlashcard = function (data) {
+const nextFlashcard = function (data) {
   return $.ajax({
-    url: config.apiUrl + '/sign-up',
-    method: 'POST',
+    url: config.apiUrl + '/flashcards/' + (Math.floor((Math.random() * 2326) + 1)),
+    method: 'GET',
     data
   })
 }
 
 module.exports = {
-
+  nextFlashcard
 }

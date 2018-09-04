@@ -6,7 +6,17 @@ const flipFlashcard = function () {
   $('.back').toggle()
 }
 
+const nextFlashcard = function (response) {
+  $('.front').show()
+  $('.back').hide()
+  const word = response.flashcard.word
+  const definition = response.flashcard.definition
+  $('.word').text(word)
+  $('.definition').text(definition)
+}
+
 module.exports = {
-  flipFlashcard
+  flipFlashcard,
+  nextFlashcard
 
 }

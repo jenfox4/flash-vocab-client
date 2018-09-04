@@ -3,4 +3,9 @@
 const store = {
 }
 
-module.exports = store
+const currentFlashcard = {}
+
+module.exports = {
+  store,
+  currentFlashcard
+}
