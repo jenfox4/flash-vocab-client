@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Flash Vocab</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -38,8 +38,8 @@
         Menu
       </a>
       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <a class="dropdown-item" href="#">All GRE flashcards</a>
-        <a class="dropdown-item" href="#">My flashcards</a>
+        <a class="dropdown-item">All GRE flashcards</a>
+        <a class="dropdown-item">My flashcards</a>
         <a class="dropdown-item" data-toggle="modal" data-target="#change-password-modal">Change Password</a>
         <a class="dropdown-item" id="log-out">Log out</a>
       </div>
@@ -50,6 +50,7 @@
 
 <div class="content">
   <div class="flashcard">
+    <span class="glyphicon glyphicon-repeat"></span>
     <div class="front">
       <h3 class="word">Ambiguous</h3>
     </div>
@@ -68,6 +69,7 @@
   </div>
 
   <div class="login-buttons">
+    <div class="login-message"></div>
       <!--sign up button -->
     <button type="button" class="btn signin-signup" data-toggle="modal" data-target="#sign-up-modal">
       Create an account

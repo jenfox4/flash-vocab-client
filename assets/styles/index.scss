@@ -19,6 +19,10 @@
   color: $white;
   font-size: 1em;
 
+  a:hover {
+    background-color: $orange;
+    color: $black !important;
+  }
   .navbar-brand {
     font-size: 1.5em;
   }
@@ -41,6 +45,10 @@
 // Modal style
 .modal-content {
   width: 400px;
+
+  h5 {
+    font-size: 1em;
+  }
 }
 
 .modal-header {
@@ -85,6 +93,10 @@ fieldset {
   margin: 30px auto;
   width: 60%;
 
+  .glyphicon-repeat {
+    padding: 20px;
+}
+
   h3 {
     font-size: 2em;
     padding: 20px;
@@ -111,11 +123,6 @@ fieldset {
   }
 }
 
-
-.login-buttons {
-  padding: 20px;
-}
-
 .back {
   textarea {
     font-size: 1em;
@@ -123,8 +130,13 @@ fieldset {
     text-align: center;
     width: 60%;
     height: 40px;
+  }
 }
+
+.login-buttons {
+  padding: 20px;
 }
+
 
 @media screen and (max-width: 950px) {
   .flashcard {

@@ -8,4 +8,7 @@ $(() => {
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#log-out').on('click', authEvents.logOut)
   $('#change-password').on('submit', authEvents.changePassword)
+  $('.modal').on('blur', function () {
+    $('.message').empty()
+})
 })
