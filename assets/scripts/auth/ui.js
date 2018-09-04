@@ -33,6 +33,7 @@ const logOutSuccess = function () {
   $('#menu').hide()
   $('#register').show()
   $('.login-buttons').show()
+  $('.card-stack').text('GRE Flashcard Stack')
 }
 
 module.exports = {

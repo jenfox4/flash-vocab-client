@@ -39,7 +39,7 @@
       </a>
       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
         <a class="dropdown-item">All GRE flashcards</a>
-        <a class="dropdown-item">My flashcards</a>
+        <a class="dropdown-item my-cards">My flashcards</a>
         <a class="dropdown-item" data-toggle="modal" data-target="#change-password-modal">Change Password</a>
         <a class="dropdown-item" id="log-out">Log out</a>
       </div>
@@ -49,6 +49,7 @@
 </nav>
 
 <div class="content">
+  <h2 class="card-stack">GRE Flashcard Stack</h2>
   <div class="flashcard">
     <div class="front">
       <h3 class="word">Ambiguous</h3>
@@ -57,7 +58,7 @@
     <div class="back">
       <h4 class="definition">doubtful; uncertain</h4>
 
-      <form>
+      <form class="sentence">
         <textarea placeholder="write a sentence to make the definition more meaningful"></textarea>
         <span class="glyphicon glyphicon-pencil"></span>
       </form>

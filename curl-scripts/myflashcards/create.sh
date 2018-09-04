@@ -1,6 +1,6 @@
 #!/bin/bash
 
-curl "http://flashvocab.herokuapp.com/myflashcards/" \
+curl "http://localhost:4741/myflashcards/" \
   --include \
   --request POST \
   --header "Content-Type: application/json" \

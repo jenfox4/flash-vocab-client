@@ -145,6 +145,11 @@ fieldset {
   font-size: 3em;
 }
 
+.sentence {
+  display: none;
+}
+
+// log in button
 .login-buttons {
   padding: 20px;
 }
@@ -153,6 +158,14 @@ fieldset {
 @media screen and (max-width: 950px) {
   .flashcard {
     width: 80%;
+
+    h4 {
+      margin-top: 10px;
+    }
+
+    .glyphicon-repeat {
+      margin: auto;
+    }
   }
   .back {
     textarea {
@@ -164,17 +177,25 @@ fieldset {
 
 @media screen and (max-width: 500px) {
   .flashcard {
-    height: 500px;
+    height: 300px;
     width: 90%;
 
+    h4 {
+      margin: 0px;
+      padding: 10px;
+    }
+
+    .glyphicon-repeat {
+      margin: auto;
+    }
   }
 
   .to-stack {
-    margin-top: 150px;
+    margin-top: 50px;
   }
 
   .btn {
-    font-size: 75%;
+    width: auto;
   }
   .back {
     textarea {

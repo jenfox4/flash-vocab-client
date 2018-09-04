@@ -3,9 +3,15 @@
 const store = {
 }
 
-const currentFlashcard = {}
+const stackMode = 'gre'
+
+const currentFlashcardId = null
+
+const arrayOfMyFlashcards = []
 
 module.exports = {
   store,
-  currentFlashcard
+  currentFlashcardId,
+  arrayOfMyFlashcards,
+  stackMode
 }
