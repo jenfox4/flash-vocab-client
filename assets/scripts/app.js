@@ -19,4 +19,5 @@ $(() => {
   $('.all-cards').on('click', userEvents.allGreCards)
   $('.remove-stack').on('click', userEvents.deleteMyFlashcard)
   $('textarea').on('blur', userEvents.saveMyflashcardSentence)
+  $('.glyphicon-pencil').on('click', userEvents.editMySetence)
 })

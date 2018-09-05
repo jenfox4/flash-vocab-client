@@ -49,6 +49,7 @@ const nextFlashcard = function (event) {
 const deleteMyFlashcard = function (event) {
   api.deleteMyFlashcard(store.flashcard.myflashcard.id)
     .then(ui.deleteSuccess)
+    .then(nextFlashcard())
     .catch(ui.fail)
 }
 
@@ -60,6 +61,12 @@ const saveMyflashcardSentence = function (event) {
     .catch(ui.fail)
 }
 
+const editMySetence = function (event) {
+  $('.no-sentence').show()
+  $('.my-sentence').hide()
+  $('.glyphicon-pencil').hide()
+}
+
 module.exports = {
   flipFlashcard,
   saveToMyflashcards,
@@ -67,5 +74,6 @@ module.exports = {
   nextFlashcard,
   deleteMyFlashcard,
   allGreCards,
-  saveMyflashcardSentence
+  saveMyflashcardSentence,
+  editMySetence
 }

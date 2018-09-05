@@ -9,9 +9,13 @@ const flipFlashcard = function () {
 }
 
 const nextFlashcard = function (response) {
+  $('.message').removeClass('fail')
+  $('.message').empty()
   store.flashcard = response
+  $('.flashcard').show()
   $('.front').show()
   $('.back').hide()
+  $('.glyphicon-arrow-right').show()
   let word = null
   let definition = null
   let sentence = null
@@ -19,10 +23,14 @@ const nextFlashcard = function (response) {
     word = response.flashcard.word
     definition = response.flashcard.definition
     $('.sentence').hide()
+    $('.to-stack').show()
+    $('.remove-stack').hide()
   } else {
     word = response.myflashcard.flashcard.word
     definition = response.myflashcard.flashcard.definition
     sentence = response.myflashcard.sentence
+    $('.to-stack').hide()
+    $('.remove-stack').show()
     if (sentence === '') {
       $('.no-sentence').show()
       $('.my-sentence').hide()
@@ -41,23 +49,37 @@ const nextFlashcard = function (response) {
 // crud actions for my flashcards
 
 const saveToMyflashcards = function () {
+  $('.message').removeClass('fail')
+  $('.message').empty()
   $('.to-stack').hide()
-  $('.remove-stack').show()
-  $('.sentence').toggle()
 }
 
 const allMyCards = function (response) {
+  $('.message').removeClass('fail')
+  $('.message').empty()
   $('.card-stack').text('Your Personal Flashcard Stack')
-  $('.sentence').show()
-  for (let i = 0; i < response.myflashcards.length; i++) {
-    store.arrayOfMyFlashcards.push(response.myflashcards[i].id)
+  if (response.myflashcards.length === 0) {
+    $('.flashcard').hide()
+    $('.card-stack').append("</br> </br> You haven't added any cards to your stack. Go back to the GRE stack and add some cards to study.")
+    $('.to-stack').hide()
+    $('.remove-stack').hide()
+    $('.glyphicon-arrow-right').hide()
+  } else {
+    for (let i = 0; i < response.myflashcards.length; i++) {
+      store.arrayOfMyFlashcards.push(response.myflashcards[i].id)
+    }
+    store.stackMode = 'mycards'
+    $('.sentence').show()
+    $('.to-stack').hide()
+    $('.remove-stack').show()
+    $('.word').text('Welcome to your flashcard stack!')
+    $('.definition').text('Click the arrow to go through your stack')
   }
-  store.stackMode = 'mycards'
-  $('.to-stack').hide()
-  $('.remove-stack').show()
 }
 
 const allGreCards = function () {
+  $('.message').removeClass('fail')
+  $('.message').empty()
   $('.card-stack').text('GRE Flashcard Stack')
   $('.sentence').toggle()
   $('.to-stack').show()
@@ -65,10 +87,14 @@ const allGreCards = function () {
 }
 
 const deleteSuccess = function (response) {
+  $('.message').removeClass('fail')
+  $('.message').empty()
   $('#delete').modal('toggle')
 }
 
 const addSentence = function (response) {
+  $('.message').removeClass('fail')
+  $('.message').empty()
   $('.my-sentence').text($('textarea').val())
   $('.my-sentence').show()
   $('.glyphicon-pencil').show()

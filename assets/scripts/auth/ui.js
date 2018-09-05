@@ -29,6 +29,11 @@ const changePasswordSuccess = function () {
   $('.modal-body .message').html('<h5> Your password has been changed! </h5>')
 }
 
+const changePasswordFail = function () {
+  $('input').val('')
+  $('.modal-body .message').html('<h5> Uh oh! No can do. Try entering your old password again. </h5>')
+}
+
 const logOutSuccess = function () {
   $('.flashcard').hide()
   $('.to-stack').hide()
@@ -39,6 +44,12 @@ const logOutSuccess = function () {
   $('.card-stack').hide()
   $('.glyphicon-arrow-right').hide()
   $('img').show()
+  $('.message').empty()
+}
+
+const logOutFail = function () {
+  $('.message').addClass('fail')
+  $('.fail').html("<h4 style='color:red'> hmm...something didn't go right. Try that again.")
 }
 
 const loginFail = function () {
@@ -62,5 +73,7 @@ module.exports = {
   changePasswordSuccess,
   logOutSuccess,
   loginFail,
-  signupFail
+  signupFail,
+  logOutFail,
+  changePasswordFail
 }
