@@ -58,12 +58,9 @@ const allMyCards = function (response) {
   $('.message').removeClass('fail')
   $('.message').empty()
   $('.card-stack').text('Your Personal Flashcard Stack')
+  console.log(response.myflashcards)
   if (response.myflashcards.length === 0) {
-    $('.flashcard').hide()
-    $('.card-stack').append("</br> </br> You haven't added any cards to your stack. Go back to the GRE stack and add some cards to study.")
-    $('.to-stack').hide()
-    $('.remove-stack').hide()
-    $('.glyphicon-arrow-right').hide()
+    noCards()
   } else {
     for (let i = 0; i < response.myflashcards.length; i++) {
       store.arrayOfMyFlashcards.push(response.myflashcards[i].id)
@@ -90,6 +87,19 @@ const deleteSuccess = function (response) {
   $('.message').removeClass('fail')
   $('.message').empty()
   $('#delete').modal('toggle')
+  const index = store.arrayOfMyFlashcards.indexOf(store.flashcard.myflashcard.id)
+  store.arrayOfMyFlashcards.splice(index, 1)
+  if (store.arrayOfMyFlashcards.length === 0) {
+    noCards()
+  }
+}
+
+const noCards = function () {
+  $('.flashcard').hide()
+  $('.card-stack').append("</br> </br> You haven't added any cards to your stack. Go back to the GRE stack and add some cards to study.")
+  $('.to-stack').hide()
+  $('.remove-stack').hide()
+  $('.glyphicon-arrow-right').hide()
 }
 
 const addSentence = function (response) {
@@ -115,5 +125,6 @@ module.exports = {
   allGreCards,
   deleteSuccess,
   addSentence,
-  fail
+  fail,
+  noCards
 }

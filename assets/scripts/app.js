@@ -12,6 +12,9 @@ $(() => {
   $('.modal').on('blur', function () {
     $('.message').empty()
   })
+  $('.modal').on('blur', function () {
+    $('.status').empty()
+  })
   $('.glyphicon-repeat').on('click', userEvents.flipFlashcard)
   $('.glyphicon-arrow-right').on('click', userEvents.nextFlashcard)
   $('.to-stack').on('click', userEvents.saveToMyflashcards)

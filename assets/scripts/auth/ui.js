@@ -37,6 +37,7 @@ const changePasswordFail = function () {
 const logOutSuccess = function () {
   $('.flashcard').hide()
   $('.to-stack').hide()
+  $('.remove-stack').hide()
   $('#menu').hide()
   $('#register').show()
   $('.login-buttons').show()

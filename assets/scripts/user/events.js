@@ -36,9 +36,14 @@ const nextFlashcard = function (event) {
   if (store.stackMode === 'gre') {
     flashcardId = (Math.floor((Math.random() * 1158) + 1))
   } else if (store.stackMode === 'mycards') {
-    const length = store.arrayOfMyFlashcards.length - 1
-    const index = (Math.floor((Math.random() * (length) + 1)))
-    flashcardId = store.arrayOfMyFlashcards[index]
+    const length = store.arrayOfMyFlashcards.length
+    console.log(length)
+    if (length === 1) {
+      flashcardId = store.arrayOfMyFlashcards[0]
+    } else {
+      const index = (Math.floor((Math.random() * (length) + 1)))
+      flashcardId = store.arrayOfMyFlashcards[index]
+    }
   }
   store.currentFlashcardId = flashcardId
   api.nextFlashcard(flashcardId)
@@ -49,7 +54,6 @@ const nextFlashcard = function (event) {
 const deleteMyFlashcard = function (event) {
   api.deleteMyFlashcard(store.flashcard.myflashcard.id)
     .then(ui.deleteSuccess)
-    .then(nextFlashcard())
     .catch(ui.fail)
 }
 
