@@ -55,38 +55,26 @@ img {
 
 // Modal style
 .modal-content {
-
   h5 {
     font-size: 1em;
-  }
-}
-
-.modal-header {
-  display: block;
-  text-align: center;
-}
+   }
+ }
 
 .modal-body {
-  align-self: center;
-}
-
-.modal-dialog {
+  align-items: center;
   display: flex;
-  margin: auto;
-  width: auto;
+  justify-content: center;
 }
 
 fieldset {
-  align-items: center;
-  border: 0;
   display: flex;
-  justify-content: center;
+  border: 0;
   padding-bottom: 20px;
   input {
+    display: flex;
     margin: 5px;
   }
   button {
-    align-self: center;
     display: flex;
     margin: 5px;
   }
@@ -229,6 +217,9 @@ fieldset {
 }
 
 @media screen and (max-width: 600px) {
+  // .modal {
+  //   width: 80%;
+  // }
   img {
     height: 50%;
     width: 50%;
