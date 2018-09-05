@@ -1,8 +1,9 @@
 # Flash Vocab by Jennifer Fox (WDI-26)
 ### Client side single page application
 
-#### View the finished project here:
-#### API-repo:
+#### View the finished project here:https://jenfox4.github.io/flash-vocab-client/
+#### Deployed Heroku: https://flashvocab.herokuapp.com/
+#### API-repo:https://github.com/jenfox4/flash-vocab-api
 
 #### You can log-in with the following for a demo:
 Username: demo@demo

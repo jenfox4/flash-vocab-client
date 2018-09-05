@@ -2,7 +2,7 @@
 
 let apiUrl
 const apiUrls = {
-  production: 'https://flashvocab.herokuapp.com/',
+  production: 'https://flashvocab.herokuapp.com',
   development: 'http://localhost:4741'
 }
 
