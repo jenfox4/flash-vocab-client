@@ -1,7 +1,6 @@
 const store = require('./../store.js')
 const config = require('./../config.js')
 
-
 const signUpSuccess = function () {
   console.log('signed up')
   $('#sign-up-modal').modal('hide')
@@ -10,6 +9,7 @@ const signUpSuccess = function () {
 }
 
 const signInSuccess = function (response) {
+  $('.sign-in-message').empty()
   $('#sign-in-modal').modal('hide')
   $('input').val('')
   $('.flashcard').show()
@@ -25,7 +25,6 @@ const signInSuccess = function (response) {
 }
 
 const changePasswordSuccess = function () {
-  console.log('changePassword')
   $('input').val('')
   $('.modal-body .message').html('<h5> Your password has been changed! </h5>')
 }
@@ -42,9 +41,15 @@ const logOutSuccess = function () {
   $('img').show()
 }
 
+const loginFail = function () {
+  $('.sign-in-message').text("We couldn't find you in our database! Make sure you enter the right username and password.")
+  $('input').val('')
+}
+
 module.exports = {
   signUpSuccess,
   signInSuccess,
   changePasswordSuccess,
-  logOutSuccess
+  logOutSuccess,
+  loginFail
 }

@@ -33,7 +33,6 @@ const allGreCards = function (event) {
 
 const nextFlashcard = function (event) {
   let flashcardId = null
-  console.log('stack mode', store.stackMode)
   if (store.stackMode === 'gre') {
     flashcardId = (Math.floor((Math.random() * 2326) + 1))
   } else if (store.stackMode === 'mycards') {
@@ -42,7 +41,6 @@ const nextFlashcard = function (event) {
     flashcardId = store.arrayOfMyFlashcards[index]
   }
   store.currentFlashcardId = flashcardId
-  console.log(flashcardId)
   api.nextFlashcard(flashcardId)
     .then(ui.nextFlashcard)
     .catch(ui.fail)
@@ -55,9 +53,7 @@ const deleteMyFlashcard = function (event) {
 }
 
 const saveMyflashcardSentence = function (event) {
-  console.log($('textarea').val())
   const sentence = $('textarea').val()
-  console.log('sentence', sentence)
   const myFlashcardId = store.flashcard.myflashcard.id
   api.addSentence(myFlashcardId, sentence)
     .then(ui.addSentence)
