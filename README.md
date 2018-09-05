@@ -1,10 +1,10 @@
-### Flash Vocab by Jennifer Fox (WDI-26)
-## Client side single page application
+# Flash Vocab by Jennifer Fox (WDI-26)
+### Client side single page application
 
-## View the finished project here:
-## API-repo:
+#### View the finished project here:
+#### API-repo:
 
-# You can log-in with the following for a demo:
+#### You can log-in with the following for a demo:
 Username: demo@demo
 Password: demo
 
@@ -14,7 +14,7 @@ As a previous educator, I strongly believe in the ability of technology to level
 This app is meant to be a study tool available for anyone who wants to study the GRE to brush up on rigorous vocabulary. Users can view over 2,000 GRE words and definitions. Users can than create their own personal study stack of flashcards with words they need to specifically study.
 
 ## Technologies Used
-# Front-end technologies
+### Front-end technologies
 * Javascript
 * HTML
 * CSS
@@ -24,7 +24,7 @@ This app is meant to be a study tool available for anyone who wants to study the
 * Grunt
 * Flexbox
 
-# Back-end technologies (see back-end repo)
+### Back-end technologies (see back-end repo)
 * Postgres
 * Ruby / Ruby on rails
 * Test driven development
@@ -34,7 +34,7 @@ For the front-end I tried to focus my energy on understanding flexbox and bootst
 
 Design does not come easy for me; I struggle with what colors and fonts to use. I tried to read on best practices of web design to get a better sense of what style and layout is most preferred and what best practices are in the industry.
 
-# User stories
+## User stories
 As a student, I want to be able to view GRE vocabulary words one at a time from all GRE words list.
 As a student, I want to be able to save GRE vocabulary words that I need to review.
 As a student, I want to be able to view GRE vocabulary words one at a time from my GRE words list.
@@ -44,10 +44,10 @@ As a on-the-go user, I want to have a mobile responsive interface.
 As a new user, I want an intuitive interface.
 As a user, I want a sleek design with minimal distractions.
 
-#Wireframes
+## Wireframes
 ![alt text](https://github.com/jenfox4/flash-vocab-client/blob/master/notecard_wireframe.png)
 ![alt text](https://github.com/jenfox4/flash-vocab-client/blob/master/notecards_wireframe.png)
 
 
-#To be continued!
+## To be continued!
 I would like to make sure everything is part of flexbox in the future. There are still some flaws in the design such as the flip over button that is not in the same place when the card is flipped. I would also like to create a flipping animation for the card in the future so the user can simply tap on the card and the card will flip over in a sleek way.
