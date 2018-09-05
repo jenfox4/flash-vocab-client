@@ -46,10 +46,21 @@ const loginFail = function () {
   $('input').val('')
 }
 
+const signupFail = function (response) {
+  console.log(response.responseText)
+  if (response.responseText === '{"email":["has already been taken"]}') {
+    $('.sign-up-message').text('Looks like you already have an account! Go ahead and sign-in!')
+  } else {
+    $('.sign-up-message').text('We are having trouble signing you up right now. Try again later.')
+  }
+  $('input').val('')
+}
+
 module.exports = {
   signUpSuccess,
   signInSuccess,
   changePasswordSuccess,
   logOutSuccess,
-  loginFail
+  loginFail,
+  signupFail
 }

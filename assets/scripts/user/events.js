@@ -54,7 +54,7 @@ const deleteMyFlashcard = function (event) {
 
 const saveMyflashcardSentence = function (event) {
   const sentence = $('textarea').val()
-  const myFlashcardId = store.flashcard.myflashcard.id
+  const myFlashcardId = store.currentFlashcardId
   api.addSentence(myFlashcardId, sentence)
     .then(ui.addSentence)
     .catch(ui.fail)
