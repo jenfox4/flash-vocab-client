@@ -56,12 +56,17 @@ const deleteMyFlashcard = function (myFlashcardId) {
   })
 }
 
-const addSentence = function (myFlashcardId) {
+const addSentence = function (myFlashcardId, sentence) {
   return $.ajax({
     url: config.apiUrl + '/myflashcards/' + myFlashcardId,
-    method: 'DELETE',
+    method: 'PATCH',
     headers: {
       'Authorization': 'Token token=' + store.user.token
+    },
+    data: {
+      myflashcard: {
+        sentence: sentence
+      }
     }
   })
 }

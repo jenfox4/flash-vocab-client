@@ -18,4 +18,5 @@ $(() => {
   $('.my-cards').on('click', userEvents.allMyCards)
   $('.all-cards').on('click', userEvents.allGreCards)
   $('.remove-stack').on('click', userEvents.deleteMyFlashcard)
+  $('textarea').on('blur', userEvents.saveMyflashcardSentence)
 })

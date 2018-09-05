@@ -9,7 +9,6 @@ const flipFlashcard = function () {
 }
 
 const nextFlashcard = function (response) {
-  console.log(response)
   store.flashcard = response
   $('.front').show()
   $('.back').hide()
@@ -19,19 +18,19 @@ const nextFlashcard = function (response) {
   if (store.stackMode === 'gre') {
     word = response.flashcard.word
     definition = response.flashcard.definition
+    $('.sentence').hide()
   } else {
     word = response.myflashcard.flashcard.word
     definition = response.myflashcard.flashcard.definition
     sentence = response.myflashcard.sentence
-    console.log(sentence)
     if (sentence === '') {
-      console.log('no sentence')
       $('.no-sentence').show()
       $('.my-sentence').hide()
+      $('.glyphicon-pencil').hide()
     } else {
-      console.log('sentence')
-      $('.my-sentence').text(response.myflashcard.flashcard.sentence)
+      $('.my-sentence').text(sentence)
       $('.my-sentence').show()
+      $('.glyphicon-pencil').show()
       $('.no-sentence').hide()
     }
   }
@@ -69,11 +68,26 @@ const deleteSuccess = function (response) {
   $('#delete').modal('toggle')
 }
 
+const addSentence = function (response) {
+  $('.my-sentence').text($('textarea').val())
+  $('.my-sentence').show()
+  $('.glyphicon-pencil').show()
+  $('.no-sentence').hide()
+  $('textarea').val('')
+}
+
+const fail = function () {
+  $('.message').addClass('fail')
+  $('.fail').html("<h4 style='color:red'> hmm...something didn't go right. Try that again.")
+}
+
 module.exports = {
   flipFlashcard,
   nextFlashcard,
   saveToMyflashcards,
   allMyCards,
   allGreCards,
-  deleteSuccess
+  deleteSuccess,
+  addSentence,
+  fail
 }

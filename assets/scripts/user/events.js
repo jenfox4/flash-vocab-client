@@ -54,11 +54,22 @@ const deleteMyFlashcard = function (event) {
     .catch(ui.fail)
 }
 
+const saveMyflashcardSentence = function (event) {
+  console.log($('textarea').val())
+  const sentence = $('textarea').val()
+  console.log('sentence', sentence)
+  const myFlashcardId = store.flashcard.myflashcard.id
+  api.addSentence(myFlashcardId, sentence)
+    .then(ui.addSentence)
+    .catch(ui.fail)
+}
+
 module.exports = {
   flipFlashcard,
   saveToMyflashcards,
   allMyCards,
   nextFlashcard,
   deleteMyFlashcard,
-  allGreCards
+  allGreCards,
+  saveMyflashcardSentence
 }
