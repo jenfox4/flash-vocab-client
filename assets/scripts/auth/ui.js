@@ -13,11 +13,14 @@ const signInSuccess = function (response) {
   $('#sign-in-modal').modal('hide')
   $('input').val('')
   $('.flashcard').show()
+  $('.card-stack').show()
   $('.to-stack').show()
   $('#menu').show()
+  $('.glyphicon-arrow-right').show()
   $('#register').hide()
   $('.login-buttons').hide()
   $('.login-message').empty()
+  $('img').hide()
   store.user = response.user
 }
 
@@ -34,6 +37,9 @@ const logOutSuccess = function () {
   $('#register').show()
   $('.login-buttons').show()
   $('.card-stack').text('GRE Flashcard Stack')
+  $('.card-stack').hide()
+  $('.glyphicon-arrow-right').hide()
+  $('img').show()
 }
 
 module.exports = {

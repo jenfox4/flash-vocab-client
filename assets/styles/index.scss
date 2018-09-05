@@ -13,6 +13,17 @@
   font-size: 1em;
 }
 
+.card-stack {
+  display: none;
+}
+
+img {
+  align-self: center;
+  width: 300px;
+  height: 350px;
+}
+
+
 //Nav bar style
 .navbar {
   background-color: $orange;
@@ -24,7 +35,7 @@
     color: $black !important;
   }
   .navbar-brand {
-    font-size: 1.5em;
+    font-size: 2em;
   }
   #menu {
     display: none;
@@ -95,40 +106,42 @@ fieldset {
   height: 300px;
 
   .glyphicon-repeat {
+    font-size: 1em;
     margin-top: 50px;
     padding: 20px;
 }
 
+  .glyphicon-pencil {
+    font-size: 1em;
+}
+
   h3 {
     font-size: 2em;
-    padding: 20px;
     text-transform: capitalize;
   }
 
   h4 {
     font-size: 1.5em;
-    padding: 20px;
   }
 
   .front {
-    margin-top: 70px;
     margin-bottom: 30px;
+    margin-top: 70px;
   }
 
-  .glyphicon-pencil {
-    font-size: 1em;
-  }
-}
 
-.back {
-  display: none;
-  margin-top: 70px;
-  textarea {
-    font-size: 1em;
-    font-style: italic;
-    text-align: center;
-    width: 60%;
-    height: 40px;
+  .back {
+    display: none;
+    margin-bottom: 30px;
+    margin-top: 70px;
+
+    textarea {
+      font-size: 1em;
+      font-style: italic;
+      height: 40px;
+      text-align: center;
+      width: 60%;
+    }
   }
 }
 
@@ -143,6 +156,7 @@ fieldset {
 
 .glyphicon-arrow-right {
   font-size: 3em;
+  display: none;
 }
 
 .sentence {
@@ -151,7 +165,16 @@ fieldset {
 
 // log in button
 .login-buttons {
+  display: flex;
+  flex-direction: column;
   padding: 20px;
+
+  .btn {
+    margin: 20px;
+    padding: 10px;
+    width: auto;
+    align-self: center;
+  }
 }
 
 
@@ -159,48 +182,67 @@ fieldset {
   .flashcard {
     width: 80%;
 
+    .back {
+
+      textarea {
+        font-size: .8em;
+        height: 80px;
+      }
+    }
+
     h4 {
+      font-size: 1em;
       margin-top: 10px;
+    }
+
+    h3 {
+      font-size: 1.5em;
     }
 
     .glyphicon-repeat {
       margin: auto;
     }
   }
-  .back {
-    textarea {
-      font-size: 0.8em;
-      height: 35px;
-    }
-  }
+
 }
 
 @media screen and (max-width: 500px) {
+  img {
+    width: 50%;
+    height: 50%;
+  }
   .flashcard {
     height: 300px;
     width: 90%;
 
     h4 {
-      margin: 0px;
-      padding: 10px;
+      font-size: 1em;
+      margin-top: 0;
     }
+
+    h3 {
+      font-size: 1.5em;
+    }
+
 
     .glyphicon-repeat {
-      margin: auto;
+      margin-top: 20px;
+    }
+
+    textarea {
+      font-size: .8em;
+      height: 80px;
     }
   }
+  }
 
-  .to-stack, .remove-stack {
-    margin-top: 50px;
+  .to-stack {
+    margin-top: 20px;
+  }
+  .remove-stack {
+    margin-top: 20px;
   }
 
   .btn {
     width: auto;
   }
-  .back {
-    textarea {
-      font-size: 0.8em;
-      height: 80px;
-    }
-  }
-}
