@@ -152,33 +152,33 @@ fieldset {
 }
 
 .to-stack, .remove-stack {
+  align-self: center;
   display: none;
   justify-content: center;
   margin: 30px;
   text-align: center;
-  align-self: center;
   width: 25%;
 }
 
 .glyphicon-arrow-right {
-  font-size: 3em;
   display: none;
+  font-size: 3em;
 }
 
 .sentence {
   align-items: center;
+  color: $orange;
   display: flex;
   flex-direction: row;
   justify-content: center;
   margin-top: 10px;
-  color: $orange;
 }
 
 .glyphicon-pencil {
-  padding-left: 3px;
   align-self: flex-start;
-  padding-top: 10px;
   font-size: 1em;
+  padding-left: 3px;
+  padding-top: 10px;
 }
 
 .my-sentence {
@@ -228,10 +228,10 @@ fieldset {
 
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   img {
-    width: 50%;
     height: 50%;
+    width: 50%;
   }
   .flashcard {
     height: 300px;
@@ -256,7 +256,6 @@ fieldset {
       height: 80px;
     }
   }
-  }
 
   .to-stack {
     margin-top: 20px;
@@ -266,5 +265,11 @@ fieldset {
   }
 
   .btn {
-    width: auto;
+    width: 45%;
   }
+
+  .content {
+    height: 100vh;
+    width: 100vw;
+  }
+}
