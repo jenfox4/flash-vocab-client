@@ -34,7 +34,7 @@ const allGreCards = function (event) {
 const nextFlashcard = function (event) {
   let flashcardId = null
   if (store.stackMode === 'gre') {
-    flashcardId = (Math.floor((Math.random() * 2326) + 1))
+    flashcardId = (Math.floor((Math.random() * 1158) + 1))
   } else if (store.stackMode === 'mycards') {
     const length = store.arrayOfMyFlashcards.length - 1
     const index = (Math.floor((Math.random() * (length) + 1)))
