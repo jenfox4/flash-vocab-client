@@ -12,7 +12,7 @@ const signInSuccess = function (response) {
   $('.sign-in-message').empty()
   $('#sign-in-modal').modal('hide')
   $('input').val('')
-  $('.flashcard').show()
+  $('.flashcard-container').show()
   $('.card-stack').show()
   $('.to-stack').show()
   $('#menu').show()
@@ -35,7 +35,7 @@ const changePasswordFail = function () {
 }
 
 const logOutSuccess = function () {
-  $('.flashcard').hide()
+  $('.flashcard-container').hide()
   $('.to-stack').hide()
   $('.remove-stack').hide()
   $('#menu').hide()

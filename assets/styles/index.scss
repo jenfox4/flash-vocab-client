@@ -91,51 +91,66 @@ fieldset {
 }
 
 //Flashcard style
-.flashcard {
-  display: none;
-  border: 3px solid $grey;
-  border-radius: 20px;
-  box-shadow: 0 0 15px $black;
-  flex-direction: column;
-  margin: 30px auto;
+.flashcard-container {
   width: 60%;
-  height: 300px;
+  perspective: 800px;
+  display: flex;
+  align-self: center;
 
-  .glyphicon-repeat {
-    font-size: 2em;
-    padding: 10px;
 }
 
-  h3 {
+.flashcard {
+  border: 3px solid $grey;
+  position: relative;
+  border-radius: 20px;
+  box-shadow: 0 0 15px $black;
+  height: 300px;
+  transform-style: preserve-3d;
+  transition: all .5s linear;
+  margin: 30px auto;
+  width: 80%;
+  display: flex;
+  align-self: center;
+}
+
+.flashcard-face {
+  position: absolute;
+  backface-visibility: hidden;
+  width: 100%;
+  margin: 5px;
+}
+
+.flashcard .back {
+  transform: rotateX(180deg);
+}
+
+.flashcard.flip {
+  transform: rotateX(180deg);
+}
+
+.front {
+  text-align: center;
+  padding: 20px 10px 0px 10px;
+  margin-top: 10%;
+
+  .word {
     font-size: 2em;
     text-transform: capitalize;
-    margin-bottom: 30px;
   }
+}
 
-  h4 {
+.back {
+  padding: 0px 10px 20px 10px;
+  margin-top: 20%;
+
+  .definition {
+    padding-bottom: 10px;
     font-size: 1.5em;
-    margin-bottom: 10px;
   }
 
-  .front {
-    margin-bottom: 30px;
-    margin-top: 70px;
-  }
-
-
-  .back {
-    display: none;
-    margin-bottom: 30px;
-    margin-top: 70px;
-
-    textarea {
-      font-size: 1em;
-      font-style: italic;
-      height: 40px;
-      text-align: center;
-      width: 60%;
-      margin-top: 10px;
-    }
+  textarea {
+    width: 80%;
+    height: 40px;
   }
 }
 
@@ -185,78 +200,4 @@ fieldset {
     padding: 10px;
     width: auto;
   }
-}
-
-
-@media screen and (max-width: 950px) {
-  .flashcard {
-    width: 80%;
-
-    .back {
-
-      textarea {
-        font-size: .8em;
-        height: 80px;
-      }
-    }
-
-    h4 {
-      font-size: 1em;
-      margin-top: 10px;
-    }
-
-    h3 {
-      font-size: 1.5em;
-    }
-
-    .glyphicon-repeat {
-      margin: auto;
-    }
-  }
-
-}
-
-@media screen and (max-width: 600px) {
-  // .modal {
-  //   width: 80%;
-  // }
-  img {
-    height: 50%;
-    width: 50%;
-  }
-  .flashcard {
-    height: 300px;
-    width: 90%;
-
-    h4 {
-      font-size: 1em;
-      margin-top: 0;
-    }
-
-    h3 {
-      font-size: 1.5em;
-    }
-
-
-    .glyphicon-repeat {
-      margin-top: 20px;
-    }
-
-    textarea {
-      font-size: .8em;
-      height: 80px;
-    }
-  }
-
-  .to-stack {
-    margin-top: 20px;
-  }
-  .remove-stack {
-    margin-top: 20px;
-  }
-
-  .btn {
-    width: 45%;
-  }
-
 }

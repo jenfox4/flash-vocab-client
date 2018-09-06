@@ -4,17 +4,19 @@ const config = require('./../config.js')
 // crud actions for all flashcards
 
 const flipFlashcard = function () {
-  $('.front').toggle()
-  $('.back').toggle()
+  if ($('.flashcard').attr('class') === 'flashcard') {
+    $('.flashcard').addClass('flip')
+  } else {
+    $('.flashcard').removeClass('flip')
+  }
 }
 
 const nextFlashcard = function (response) {
   $('.message').removeClass('fail')
   $('.message').empty()
   store.flashcard = response
-  $('.flashcard').show()
-  $('.front').show()
-  $('.back').hide()
+  $('.flashcard-container').show()
+  $('.flashcard').removeClass('flip')
   $('.glyphicon-arrow-right').show()
   let word = null
   let definition = null
@@ -95,7 +97,7 @@ const deleteSuccess = function (response) {
 }
 
 const noCards = function () {
-  $('.flashcard').hide()
+  $('.flashcard-container').hide()
   $('.card-stack').append("</br> </br> You haven't added any cards to your stack. Go back to the GRE stack and add some cards to study.")
   $('.to-stack').hide()
   $('.remove-stack').hide()

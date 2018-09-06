@@ -37,12 +37,15 @@ const nextFlashcard = function (event) {
     flashcardId = (Math.floor((Math.random() * 1158) + 1))
   } else if (store.stackMode === 'mycards') {
     const length = store.arrayOfMyFlashcards.length
-    console.log(length)
+    console.log('length', length)
     if (length === 1) {
       flashcardId = store.arrayOfMyFlashcards[0]
+      console.log('id', flashcardId)
     } else {
-      const index = (Math.floor((Math.random() * (length) + 1)))
+      const index = (Math.floor((Math.random() * length) + 1)) - 1
+      console.log(index)
       flashcardId = store.arrayOfMyFlashcards[index]
+      console.log('id', flashcardId)
     }
   }
   store.currentFlashcardId = flashcardId
@@ -79,5 +82,5 @@ module.exports = {
   deleteMyFlashcard,
   allGreCards,
   saveMyflashcardSentence,
-  editMySetence
+  editMySetence,
 }

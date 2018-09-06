@@ -4,6 +4,7 @@ const authEvents = require('./auth/events.js')
 const userEvents = require('./user/events.js')
 
 $(() => {
+  $('.flashcard-container').hide()
   // AUTHENTICATION HANDLERS
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
@@ -15,7 +16,7 @@ $(() => {
   $('.modal').on('blur', function () {
     $('.status').empty()
   })
-  $('.glyphicon-repeat').on('click', userEvents.flipFlashcard)
+  $('.flashcard').on('click', userEvents.flipFlashcard)
   $('.glyphicon-arrow-right').on('click', userEvents.nextFlashcard)
   $('.to-stack').on('click', userEvents.saveToMyflashcards)
   $('.my-cards').on('click', userEvents.allMyCards)
