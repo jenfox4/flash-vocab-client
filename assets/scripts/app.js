@@ -17,6 +17,9 @@ $(() => {
     $('.status').empty()
   })
   $('.flashcard').on('click', userEvents.flipFlashcard)
+  $('.sentence').click(function (event) {
+    event.stopPropagation()
+  })
   $('.glyphicon-arrow-right').on('click', userEvents.nextFlashcard)
   $('.to-stack').on('click', userEvents.saveToMyflashcards)
   $('.my-cards').on('click', userEvents.allMyCards)

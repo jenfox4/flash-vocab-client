@@ -149,8 +149,11 @@ fieldset {
   }
 
   textarea {
-    width: 80%;
+    width: 85%;
     height: 40px;
+    color: $grey;
+    font-size: .8em;
+    text-align: center;
   }
 }
 
