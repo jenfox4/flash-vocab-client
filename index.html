@@ -50,7 +50,6 @@
 
 <div class="content">
   <div class="message"></div>
-  <img src="./public/images/books.jpg">
   <h2 class="card-stack">GRE Flashcard Stack</h2>
 
   <!-- flashcard -->
@@ -76,67 +75,37 @@
   <button type="button" class="btn remove-stack">remove my stack</button>
   <span class="glyphicon glyphicon-arrow-right"></span>
 
-  <div class="login-buttons">
-    <div class="login-message"></div>
-      <!--sign up button -->
-    <button type="button" class="btn signin-signup" data-toggle="modal" data-target="#sign-up-modal">
-      Create an account
-    </button>
-    <!--sign in button -->
-    <button type="button" class="btn signin-signup" data-toggle="modal" data-target="#sign-in-modal">
-      Log In
-    </button>
-  </div>
-
-    <!-- Sign up modal -->
-    <div class="modal fade modal-fullscreen" id="sign-up-modal" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 id="sign-up-title" class="modal-title">Sign up to start studying!</h5>
-          </div>
-          <div>
-            <h5 class="sign-up-message status"></h5>
-          </div>
-          <div class="modal-body">
-            <p class="message"></p>
-            <form id="sign-up">
-            <fieldset>
-              <input type="email" name="credentials[email]" placeholder="Email">
-              <input type="password" name="credentials[password]" placeholder="Password">
-              <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
-                <button type="submit" class="btn">sign up</button>
-            </fieldset>
-          </form>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-      <!-- Sign in modal -->
-      <div class="modal fade modal-fullscreen" id="sign-in-modal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Sign into your account to start studying!</h5>
-            </div>
-            <div>
-              <h5 class="sign-in-message status"></h5>
-            </div>
-            <div class="modal-body">
-              <p class="message"></p>
+  <img src="./public/images/books.jpg">
+          <!-- sign in card  -->
+          <div class="card bg-light mb-3 sign-in">
+            <div class="card-header">Sign into your account</div>
+            <div class="card-body">
+              <p class=""></p>
               <form id="sign-in">
-              <fieldset>
                 <input type="email" name="credentials[email]" placeholder="Email">
                 <input type="password" name="credentials[password]" placeholder="Password">
-                  <button type="submit" class="btn">sign in</button>
-              </fieldset>
+                <button type="submit" class="btn">Log In</button>
             </form>
+            <p> Not yet a member? <a class="sign-up-btn">Sign up now! </a></p>
             </div>
           </div>
-        </div>
-      </div>
+
+          <!-- sign up card  -->
+          <div class="card bg-light mb-3 sign-up">
+            <div class="card-header">Create an account</div>
+            <div class="card-body">
+              <p class=""></p>
+              <form id="sign-up">
+                <input type="email" name="credentials[email]" placeholder="Email">
+                <input type="password" name="credentials[password]" placeholder="Password">
+                <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+                <button type="submit" class="btn">Sign Up</button>
+            </form>
+            <p> Already a member? <a class="sign-up"> Log in</a></p>
+            </div>
+          </div>
+
+
 
       <!-- Change password modal -->
       <div class="modal fade" id="change-password-modal" tabindex="-1" role="dialog" aria-hidden="true">
