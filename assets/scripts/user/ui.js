@@ -57,6 +57,8 @@ const saveToMyflashcards = function () {
 }
 
 const allMyCards = function (response) {
+  $('.flashcard').removeClass('flip')
+  $('.sentence').hide()
   $('.message').removeClass('fail')
   $('.message').empty()
   $('.card-stack').text('Your Personal Flashcard Stack')
@@ -73,6 +75,8 @@ const allMyCards = function (response) {
     $('.remove-stack').show()
     $('.word').text('Welcome to your flashcard stack!')
     $('.definition').text('Click the arrow to go through your stack')
+    $('.no-sentence').hide()
+    $('.glyphicon-pencil').hide()
   }
 }
 
