@@ -10,12 +10,8 @@ $(() => {
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#log-out').on('click', authEvents.logOut)
   $('#change-password').on('submit', authEvents.changePassword)
-  $('.modal').on('blur', function () {
-    $('.message').empty()
-  })
-  $('.modal').on('blur', function () {
-    $('.status').empty()
-  })
+  $('.sign-up-btn').on('click', userEvents.toggleSignUp)
+  $('.sign-in-btn').on('click', userEvents.toggleSignIn)
   $('.flashcard').on('click', userEvents.flipFlashcard)
   $('.sentence').click(function (event) {
     event.stopPropagation()
@@ -26,5 +22,11 @@ $(() => {
   $('.all-cards').on('click', userEvents.allGreCards)
   $('.remove-stack').on('click', userEvents.deleteMyFlashcard)
   $('textarea').on('blur', userEvents.saveMyflashcardSentence)
+  $('textarea').click(function (event) {
+    event.stopPropagation()
+  })
+  $('.glyphicon-pencil').click(function (event) {
+    event.stopPropagation()
+  })
   $('.glyphicon-pencil').on('click', userEvents.editMySetence)
 })

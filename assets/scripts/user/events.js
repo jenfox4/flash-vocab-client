@@ -9,6 +9,16 @@ const flipFlashcard = function (event) {
   ui.flipFlashcard()
 }
 
+const toggleSignUp = function () {
+  $('.sign-in').hide()
+  $('.sign-up').show()
+}
+
+const toggleSignIn = function () {
+  $('.sign-in').show()
+  $('.sign-up').hide()
+}
+
 const saveToMyflashcards = function (event) {
   event.preventDefault()
   const flashcardId = store.currentFlashcardId
@@ -83,4 +93,6 @@ module.exports = {
   allGreCards,
   saveMyflashcardSentence,
   editMySetence,
+  toggleSignUp,
+  toggleSignIn
 }

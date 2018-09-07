@@ -4,13 +4,18 @@
 //body style
 .content {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
   margin: 20px;
   text-align: center;
 }
 
 .btn {
+  background: $orange;
+  box-shadow: 5px solid $grey;
+  color: $white;
   font-size: 1em;
+  border-radius: 5%;
 }
 
 .card-stack {
@@ -66,28 +71,47 @@ img {
   justify-content: center;
 }
 
-fieldset {
-  display: flex;
-  border: 0;
-  padding-bottom: 20px;
-  input {
-    display: flex;
-    margin: 5px;
+// sign in/ sign up style
+
+.card {
+  .card-header {
+    font-size: 1.3em;
   }
+  align-self: center;
+  width: 30%;
+  border-radius: 10%;
+}
+
+.card-body {
+  p {
+    padding: 5px;
+  }
+}
+
+#sign-in {
   button {
-    display: flex;
     margin: 5px;
-  }
+    padding: 5px 10px 5px 10px;
+}
 }
 
-.sign-in-message {
-  color: red;
-  padding: 5px;
+.sign-up-btn {
+  text-decoration: underline !important;
+  cursor: pointer;
 }
 
-.sign-up-message {
-  color: red;
-  padding: 5px;
+.sign-in-btn {
+  text-decoration: underline !important;
+  cursor: pointer;
+}
+
+input {
+  margin: 5px;
+  width: 85%;
+}
+
+.sign-up {
+  display: none;
 }
 
 //Flashcard style
@@ -203,4 +227,20 @@ fieldset {
     padding: 10px;
     width: auto;
   }
+}
+
+// mobile responsive
+@media only screen and (max-width: 600px) {
+    img {
+      display: none;
+    }
+    .card {
+      width: 90%;
+    }
+}
+
+@media only screen and (min-width:600px) and (max-width: 800px) {
+    .card {
+      width: 40%;
+    }
 }

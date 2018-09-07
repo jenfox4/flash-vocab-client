@@ -3,24 +3,21 @@ const config = require('./../config.js')
 
 const signUpSuccess = function () {
   console.log('signed up')
-  $('#sign-up-modal').modal('hide')
   $('input').val('')
   $('.login-message').html('<h4> You are now signed up! Log in to start studying </h4>')
 }
 
 const signInSuccess = function (response) {
-  $('.sign-in-message').empty()
-  $('#sign-in-modal').modal('hide')
   $('input').val('')
   $('.flashcard-container').show()
+  $('.sentence').hide()
   $('.card-stack').show()
   $('.to-stack').show()
   $('#menu').show()
   $('.glyphicon-arrow-right').show()
-  $('#register').hide()
-  $('.login-buttons').hide()
-  $('.login-message').empty()
+  $('.sign-in').hide()
   $('img').hide()
+  $('.content').css('flex-direction', 'column')
   store.user = response.user
 }
 
@@ -40,12 +37,12 @@ const logOutSuccess = function () {
   $('.remove-stack').hide()
   $('#menu').hide()
   $('#register').show()
-  $('.login-buttons').show()
   $('.card-stack').text('GRE Flashcard Stack')
   $('.card-stack').hide()
   $('.glyphicon-arrow-right').hide()
   $('img').show()
   $('.message').empty()
+  $('.sign-in').show()
 }
 
 const logOutFail = function () {
