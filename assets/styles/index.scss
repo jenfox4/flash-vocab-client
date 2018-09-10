@@ -193,6 +193,7 @@ input {
   }
 }
 
+// add to stack and remove from stack buttons
 .to-stack, .remove-stack {
   align-self: center;
   display: none;
@@ -202,11 +203,13 @@ input {
   width: 25%;
 }
 
+// arrow for next card
 .glyphicon-arrow-right {
   display: none;
   font-size: 3em;
 }
 
+// My sentence styling
 .sentence {
   align-items: center;
   color: $orange;
@@ -243,16 +246,34 @@ input {
 
 // mobile responsive
 @media only screen and (max-width: 600px) {
-    img {
-      display: none;
+  img {
+    display: none;
     }
-    .card {
-      width: 90%;
+  .card {
+    width: 90%;
     }
+  .flashcard-container {
+    width: 100%;
+  }
+  .to-stack, .remove-stack {
+    width: auto;
+  }
+  .back {
+    margin-top: 30%;
+    textarea {
+      height: 80px;
+    }
+  }
 }
 
 @media only screen and (min-width:600px) and (max-width: 800px) {
-    .card {
-      width: 40%;
+  .card {
+    width: 40%;
+    }
+  .flashcard-container {
+    width: 100%;
+    }
+  .to-stack, .remove-stack {
+    width: auto;
     }
 }

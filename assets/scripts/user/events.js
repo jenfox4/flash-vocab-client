@@ -65,7 +65,7 @@ const saveMyflashcardSentence = function (event) {
   const myFlashcardId = store.currentFlashcardId
   api.addSentence(myFlashcardId, sentence)
     .then(ui.addSentence)
-    .catch(ui.failSaveMyFlashcardSentence)
+    .catch(ui.failAddSentence)
 }
 
 const editMySetence = function (event) {

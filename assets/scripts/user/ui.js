@@ -1,8 +1,7 @@
 const store = require('./../store.js')
 const config = require('./../config.js')
 
-// crud actions for all flashcards
-
+// flip the flashcard to show other side
 const flipFlashcard = function () {
   if ($('.flashcard').attr('class') === 'flashcard') {
     $('.flashcard').addClass('flip')
@@ -125,17 +124,10 @@ const failDeleteFlashcard = function () {
   $('.fail-message').text("We can't remove it from the deck at the moment. Are you sure you want to delete it anyway?")
 }
 
-const noCards = function () {
-  $('.flashcard-container').hide()
-  $('.card-stack').append("</br> </br> You haven't added any cards to your stack. Go back to the GRE stack and add some cards to study.")
-  $('.to-stack').hide()
-  $('.remove-stack').hide()
-  $('.glyphicon-arrow-right').hide()
-}
-
+// add sentence to my flashcard
 const addSentence = function (response) {
-  $('.message').removeClass('fail')
-  $('.message').empty()
+  $('.fail-message').removeClass('fail')
+  $('.fail-message').empty()
   $('.my-sentence').text($('textarea').val())
   $('.my-sentence').show()
   $('.glyphicon-pencil').show()
@@ -143,9 +135,17 @@ const addSentence = function (response) {
   $('textarea').val('')
 }
 
-const fail = function () {
-  $('.message').addClass('fail')
-  $('.fail').html("<h4 style='color:red'> hmm...something didn't go right. Try that again.")
+const failAddSentence = function () {
+  $('.fail-message').addClass('fail')
+  $('.fail-message').text("That sentence can't be added at the moment. Try again later.")
+}
+
+const noCards = function () {
+  $('.flashcard-container').hide()
+  $('.card-stack').append("</br> </br> You haven't added any cards to your stack. Go back to the GRE stack and add some cards to study.")
+  $('.to-stack').hide()
+  $('.remove-stack').hide()
+  $('.glyphicon-arrow-right').hide()
 }
 
 module.exports = {
@@ -160,6 +160,6 @@ module.exports = {
   deleteSuccess,
   failDeleteFlashcard,
   addSentence,
-  fail,
+  failAddSentence,
   noCards
 }
