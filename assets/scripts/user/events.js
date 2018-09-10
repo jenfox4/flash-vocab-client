@@ -9,28 +9,6 @@ const flipFlashcard = function (event) {
   ui.flipFlashcard()
 }
 
-const saveToMyflashcards = function (event) {
-  event.preventDefault()
-  const flashcardId = store.currentFlashcardId
-  api.saveToMyflashcards(flashcardId)
-    .then(ui.saveToMyflashcards)
-    .catch(ui.fail)
-}
-
-const allMyCards = function (event) {
-  event.preventDefault()
-  api.allMyCards()
-    .then(ui.allMyCards)
-    .catch(ui.fail)
-}
-
-const allGreCards = function (event) {
-  event.preventDefault()
-  store.stackMode = 'gre'
-  ui.allGreCards()
-  nextFlashcard()
-}
-
 const nextFlashcard = function (event) {
   let flashcardId = null
   if (store.stackMode === 'gre') {
@@ -51,13 +29,36 @@ const nextFlashcard = function (event) {
   store.currentFlashcardId = flashcardId
   api.nextFlashcard(flashcardId)
     .then(ui.nextFlashcard)
-    .catch(ui.fail)
+    .catch(ui.failNextFlashcard)
 }
+
+const saveToMyflashcards = function (event) {
+  event.preventDefault()
+  const flashcardId = store.currentFlashcardId
+  api.saveToMyflashcards(flashcardId)
+    .then(ui.saveToMyflashcards)
+    .catch(ui.failSaveToMyFlashcards)
+}
+
+const allMyCards = function (event) {
+  event.preventDefault()
+  api.allMyCards()
+    .then(ui.allMyCards)
+    .catch(ui.failShowAllMyCards)
+}
+
+const allGreCards = function (event) {
+  event.preventDefault()
+  store.stackMode = 'gre'
+  ui.allGreCards()
+  nextFlashcard()
+}
+
 
 const deleteMyFlashcard = function (event) {
   api.deleteMyFlashcard(store.flashcard.myflashcard.id)
     .then(ui.deleteSuccess)
-    .catch(ui.fail)
+    .catch(ui.failDeleteFlashcard)
 }
 
 const saveMyflashcardSentence = function (event) {
@@ -65,7 +66,7 @@ const saveMyflashcardSentence = function (event) {
   const myFlashcardId = store.currentFlashcardId
   api.addSentence(myFlashcardId, sentence)
     .then(ui.addSentence)
-    .catch(ui.fail)
+    .catch(ui.failSaveMyFlashcardSentence)
 }
 
 const editMySetence = function (event) {

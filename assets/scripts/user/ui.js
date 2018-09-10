@@ -11,9 +11,10 @@ const flipFlashcard = function () {
   }
 }
 
+// show the next flashcard in deck when arrow button is pressed
 const nextFlashcard = function (response) {
-  $('.message').removeClass('fail')
-  $('.message').empty()
+  $('.fail-message').removeClass('fail')
+  $('.fail-message').empty()
   store.flashcard = response
   $('.flashcard-container').show()
   $('.flashcard').removeClass('flip')
@@ -48,7 +49,10 @@ const nextFlashcard = function (response) {
   $('.definition').text(definition)
 }
 
-// crud actions for my flashcards
+const failNextFlashcard = function () {
+  $('.fail-message').addClass('fail')
+  $('.fail-message').text('We are having trouble finding the next card. Try again in a moment')
+}
 
 const saveToMyflashcards = function () {
   $('.message').removeClass('fail')
@@ -126,6 +130,7 @@ const fail = function () {
 module.exports = {
   flipFlashcard,
   nextFlashcard,
+  failNextFlashcard,
   saveToMyflashcards,
   allMyCards,
   allGreCards,
