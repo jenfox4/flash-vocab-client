@@ -10,8 +10,8 @@ $(() => {
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#log-out').on('click', authEvents.logOut)
   $('#change-password').on('submit', authEvents.changePassword)
-  $('.sign-up-btn').on('click', userEvents.toggleSignUp)
-  $('.sign-in-btn').on('click', userEvents.toggleSignIn)
+  $('.sign-up-btn').on('click', authEvents.toggleSignUp)
+  $('.sign-in-btn').on('click', authEvents.toggleSignIn)
   $('.flashcard').on('click', userEvents.flipFlashcard)
   $('.sentence').click(function (event) {
     event.stopPropagation()
@@ -29,4 +29,9 @@ $(() => {
     event.stopPropagation()
   })
   $('.glyphicon-pencil').on('click', userEvents.editMySetence)
+  $('#change-password-modal').on('blur', function () {
+    $('.modal-body .message').empty()
+    $('.modal-body .message').removeClass('fail')
+    $('.modal-body .message').removeClass('success')
+  })
 })

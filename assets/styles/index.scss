@@ -26,6 +26,7 @@ img {
   align-self: center;
   width: 300px;
   height: 350px;
+  margin-right: 50px;
 }
 
 
@@ -113,6 +114,17 @@ input {
 .sign-up {
   display: none;
 }
+
+// Fail messages and success message
+.fail {
+  color: red;
+}
+
+.success {
+  color: green;
+}
+
+
 
 //Flashcard style
 .flashcard-container {
