@@ -75,11 +75,14 @@ const logOutSuccess = function () {
   $('img').show()
   $('.message').empty()
   $('.sign-in').show()
+  $('.content').css('flex-direction', 'row')
+  $('.log-out-status').removeClass('fail')
+  $('.log-out-status').empty()
 }
 
 const logOutFail = function () {
-  $('.message').addClass('fail')
-  $('.fail').html("<h4 style='color:red'> hmm...something didn't go right. Try that again.")
+  $('.log-out-status').addClass('fail')
+  $('.log-out-status').html("<h4> Look's like you can't log out right now.</h4>")
 }
 
 module.exports = {
