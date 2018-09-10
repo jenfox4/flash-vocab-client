@@ -33,6 +33,7 @@ const nextFlashcard = function (response) {
     definition = response.myflashcard.flashcard.definition
     sentence = response.myflashcard.sentence
     $('.to-stack').hide()
+    $('.sentence').show()
     $('.remove-stack').show()
     if (sentence === '') {
       $('.no-sentence').show()
@@ -54,19 +55,25 @@ const failNextFlashcard = function () {
   $('.fail-message').text('We are having trouble finding the next card. Try again in a moment')
 }
 
+// save card to personal flashcard deck
 const saveToMyflashcards = function () {
-  $('.message').removeClass('fail')
-  $('.message').empty()
+  $('.fail-message').removeClass('fail')
+  $('.fail-message').empty()
   $('.to-stack').hide()
 }
 
+const failSaveToMyFlashcards = function () {
+  $('.fail-message').addClass('fail')
+  $('.fail-message').text("There's a problem saving your card to the stack. Try again!")
+}
+
+// switch to my personal flashcard deck
 const allMyCards = function (response) {
   $('.flashcard').removeClass('flip')
   $('.sentence').hide()
-  $('.message').removeClass('fail')
-  $('.message').empty()
+  $('.fail-message').removeClass('fail')
+  $('.fail-message').empty()
   $('.card-stack').text('Your Personal Flashcard Stack')
-  console.log(response.myflashcards)
   if (response.myflashcards.length === 0) {
     noCards()
   } else {
@@ -84,24 +91,38 @@ const allMyCards = function (response) {
   }
 }
 
+const failShowAllMyCards = function () {
+  $('.fail-message').addClass('fail')
+  $('.fail-message').text('Uh oh! We lost your flashcards...maybe we will find them later....')
+}
+
+// show all GRE cards
 const allGreCards = function () {
-  $('.message').removeClass('fail')
-  $('.message').empty()
+  $('.fail-message').removeClass('fail')
+  $('.fail-message').empty()
   $('.card-stack').text('GRE Flashcard Stack')
   $('.sentence').toggle()
   $('.to-stack').show()
   $('.remove-stack').hide()
 }
 
+// delete a flashcard from my flashcards
 const deleteSuccess = function (response) {
-  $('.message').removeClass('fail')
-  $('.message').empty()
+  $('.fail-message').removeClass('fail')
+  $('.fail-message').empty()
+  $('.remove-stack').hide()
   $('#delete').modal('toggle')
+  $('.sentence').hide()
   const index = store.arrayOfMyFlashcards.indexOf(store.flashcard.myflashcard.id)
   store.arrayOfMyFlashcards.splice(index, 1)
   if (store.arrayOfMyFlashcards.length === 0) {
     noCards()
   }
+}
+
+const failDeleteFlashcard = function () {
+  $('.fail-message').addClass('fail')
+  $('.fail-message').text("We can't remove it from the deck at the moment. Are you sure you want to delete it anyway?")
 }
 
 const noCards = function () {
@@ -132,9 +153,12 @@ module.exports = {
   nextFlashcard,
   failNextFlashcard,
   saveToMyflashcards,
+  failSaveToMyFlashcards,
+  failShowAllMyCards,
   allMyCards,
   allGreCards,
   deleteSuccess,
+  failDeleteFlashcard,
   addSentence,
   fail,
   noCards

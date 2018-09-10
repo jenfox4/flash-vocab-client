@@ -73,11 +73,12 @@ const logOutSuccess = function () {
   $('.card-stack').hide()
   $('.glyphicon-arrow-right').hide()
   $('img').show()
-  $('.message').empty()
   $('.sign-in').show()
   $('.content').css('flex-direction', 'row')
   $('.log-out-status').removeClass('fail')
   $('.log-out-status').empty()
+  $('.fail-message').removeClass('fail')
+  $('.fail-message').empty()
 }
 
 const logOutFail = function () {

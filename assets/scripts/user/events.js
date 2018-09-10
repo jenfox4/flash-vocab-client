@@ -54,7 +54,6 @@ const allGreCards = function (event) {
   nextFlashcard()
 }
 
-
 const deleteMyFlashcard = function (event) {
   api.deleteMyFlashcard(store.flashcard.myflashcard.id)
     .then(ui.deleteSuccess)
