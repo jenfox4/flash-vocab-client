@@ -4,6 +4,7 @@ const authEvents = require('./auth/events.js')
 const userEvents = require('./user/events.js')
 
 $(() => {
+  $('html').show()
   $('.flashcard-container').hide()
   // AUTHENTICATION HANDLERS
   $('#sign-up').on('submit', authEvents.onSignUp)

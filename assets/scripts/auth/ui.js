@@ -34,11 +34,12 @@ const signInSuccess = function (response) {
   $('.sentence').hide()
   $('.card-stack').show()
   $('.to-stack').show()
-  $('#menu').show()
+  $('.menu').show()
   $('.glyphicon-arrow-right').show()
   $('.sign-in').hide()
   $('img').hide()
   $('.content').css('flex-direction', 'column')
+  $('.home-page').hide()
   store.user = response.user
 }
 
@@ -67,7 +68,7 @@ const logOutSuccess = function () {
   $('.flashcard-container').hide()
   $('.to-stack').hide()
   $('.remove-stack').hide()
-  $('#menu').hide()
+  $('.menu').hide()
   $('#register').show()
   $('.card-stack').text('GRE Flashcard Stack')
   $('.card-stack').hide()
@@ -79,6 +80,7 @@ const logOutSuccess = function () {
   $('.log-out-status').empty()
   $('.fail-message').removeClass('fail')
   $('.fail-message').empty()
+  $('.home-page').show()
 }
 
 const logOutFail = function () {
